@@ -446,6 +446,9 @@ text-align: unset;
 .key, .value{
     margin-left:15px;
 }
+.surfaceDiv,.structureDiv{
+    background-color:none;
+}
 h5{
     opacity: 1;
     color: #fff;
