@@ -369,6 +369,9 @@ width:100%;
 width:66.5%;
 height:89px;
 }
+.surfaceDiv,.structureDiv{
+    background-color:none;
+}
 .headerNav .list .listItem a{
     color: #fff;
     font-style: normal;
@@ -446,9 +449,7 @@ text-align: unset;
 .key, .value{
     margin-left:15px;
 }
-.surfaceDiv,.structureDiv{
-    background-color:none;
-}
+
 h5{
     opacity: 1;
     color: #fff;
