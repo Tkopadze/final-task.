@@ -2,6 +2,15 @@
   
 const fixedBody = document.getElementsByTagName('body');
 const burgerIcon = document.querySelector('.burger-icon');
+const wrap = document.querySelector('.wrapA');
+const quarter = document.querySelector('.quarter');
+
+window.onload = function() {
+    // controlWrap();
+   
+    
+  };
+
 
 function toggleBurgerMenu() {
     console.log("function")
@@ -19,26 +28,42 @@ function toggleBurgerMenu() {
   
   // Event listener for the burger icon
   document.querySelector('.burger-icon').addEventListener('click', toggleBurgerMenu);
+  const PLANET_API_URI = 'https://planets-api.vercel.app/api/v1/planets';
+  const takeData = () => {
+    fetch(PLANET_API_URI)
+    .then(response => response.json())
+    .then(data => {
+      if (data.length > 0 && i >= 0 && i < data.length) {
+        const color = data[i].color; // Access the color property of the object at index i
+        // Now you can use the 'color' variable as needed
+        console.log(color);
+      }
+    })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });}
   
-  // Define the planet name you want to fetch data for
-//   const planetName = 'mercury'; // Replace with the desired planet name
-  
-  // Fetch API data and populate the menu with colors
-//   fetch(`https://planets-api.vercel.app/api/v1/planets/${planetName}`)
-//     .then(response => response.json())
-//     .then(data => {
-//       const menuList = document.querySelector('.menu-list');
-  
-//       // Assuming the API response is an object with properties like "name" and "color"
-//       const listItem = document.createElement('li');
-//       listItem.textContent = data.name; // Access the name property
-//       listItem.style.color = data.color; // Access the color property
-//       menuList.appendChild(listItem);
-//     })
-//     .catch(error => {
-//       console.error('Error fetching API data:', error);
-//     });
-  
+
+
+    function lightUp(){
+        wrap.addEventListener('click', (event) => {
+            const clickedQuarter = event.target.closest('.quarter');
+          
+            if (clickedQuarter) {
+              // Remove background color from all quarters
+              const quarters = wrap.querySelectorAll('.quarter');
+              quarters.forEach(q => q.style.backgroundColor = 'unset');
+          
+              // Set the background color of the clicked quarter
+              const color = clickedQuarter.getAttribute('data-color');
+              clickedQuarter.style.backgroundColor = color;
+            }
+          });
+    }
+
+
+lightUp();
+
 
 
 
@@ -84,4 +109,3 @@ function toggleBurgerMenu() {
 //   });
 // };
 
-//  getPlanet();
