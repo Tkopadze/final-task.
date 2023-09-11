@@ -2,14 +2,11 @@
   
 const fixedBody = document.getElementsByTagName('body');
 const burgerIcon = document.querySelector('.burger-icon');
-const wrap = document.querySelector('.wrapA');
-const quarter = document.querySelector('.quarter');
+const wrap = document.querySelectorAll('.wrapA');
+const quarter = document.querySelectorAll('.quarter');
+const listItem = document.querySelectorAll('.a');
+const rectangle = document.querySelectorAll('.rectangle');
 
-window.onload = function() {
-    // controlWrap();
-   
-    
-  };
 
 
 function toggleBurgerMenu() {
@@ -43,26 +40,46 @@ function toggleBurgerMenu() {
         console.error('Error fetching data:', error);
       });}
   
-
-
-    function lightUp(){
-        wrap.addEventListener('click', (event) => {
-            const clickedQuarter = event.target.closest('.quarter');
-          
-            if (clickedQuarter) {
-              // Remove background color from all quarters
-              const quarters = wrap.querySelectorAll('.quarter');
+    
+      function lightUp() {
+        wrap.forEach(container => {
+          container.addEventListener('click', (event) => {
+            if (event.target) {
+              // Remove background color from all quarters within the clicked container
+              const quarters = document.querySelectorAll('.quarter');
               quarters.forEach(q => q.style.backgroundColor = 'unset');
-          
+              console.log(event.target.nextElementSibling)
               // Set the background color of the clicked quarter
-              const color = clickedQuarter.getAttribute('data-color');
-              clickedQuarter.style.backgroundColor = color;
+              const color = event.target.getAttribute('data-color');
+              event.target.nextElementSibling.style.backgroundColor = "#fff";
             }
           });
-    }
+        });
+      }
+      
 
+      function lightUp2() {
+        listItem.forEach(x => {
+          x.addEventListener('click', (event) => {
+            if (event.target.parentNode) {
+              // Remove background color from all quarters within the clicked container
+             
+              const rectangles = document.querySelectorAll('.rectangle');
+              rectangles.forEach(p => p.style.backgroundColor = 'unset');
+             
+             console.log('aaa');
+              // Set the background color of the clicked quarter
+            //   const color = event.target.getAttribute('data-color');
+              event.target.parentNode.previousElementSibling.style.backgroundColor = "#fff";
+             
 
-lightUp();
+            }
+          });
+        });
+      }
+      lightUp();
+      lightUp2();
+      
 
 
 
