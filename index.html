@@ -15,14 +15,40 @@
         <div class="burger-icon"></div>
         <div class="headerNav">
             <ul class="list">
-                <li class="listItem mercury"><a href="./index.html">MERCURY</a></li>
-                <li class="listItem venus"><a href="">VENUS</a></li>
-                <li class="listItem earth"><a href="">EARTH</a></li>
-                <li class="listItem mars"><a href="">MARS</a></li>
-                <li class="listItem jupiter"><a href="">JUPITER</a></li>
-                <li class="listItem saturn"><a href="">SATURN</a></li>
-                <li class="listItem uranus"><a href="">URANUS</a></li>
-                <li class="listItem neptune"><a href="">NEPTUNE</a></li>
+
+           <div class="planetrectangle">
+            <div class="rectangle"></div>
+                <li class="listItem mercury"><a href="#" class="a">MERCURY</a></li>
+                
+            </div>
+                <div class="planetrectangle">
+                    <div class="rectangle"></div>
+                <li class="listItem venus"><a class="a" href="#">VENUS</a></li>
+            </div>
+                <div class="planetrectangle">
+                <div class="rectangle"></div>
+               <li class="listItem earth"><a class="a" href="#">EARTH</a></li>
+            </div>
+                <div class="planetrectangle">
+                <div class="rectangle"></div>
+                <li class="listItem mars"><a class="a" href="#">MARS</a></li> 
+            </div>
+                <div class="planetrectangle">
+                <div class="rectangle"></div>
+                <li class="listItem jupiter"><a  class="a" href="#">JUPITER</a></li>
+            </div>
+            <div class="planetrectangle">
+                <div class="rectangle"></div>
+                <li class="listItem saturn"><a  class="a" href="#">SATURN</a></li>
+            </div>
+            <div class="planetrectangle">
+                <div class="rectangle"></div>
+                <li class="listItem uranus"><a class="a" href="#">URANUS</a></li>
+            </div>
+            <div class="planetrectangle">
+                <div class="rectangle"></div>
+                <li class="listItem neptune"><a class="a" href="#">NEPTUNE</a></li>
+            </div>
             </ul>
         </div>
     </header>
@@ -37,49 +63,49 @@
         <ul class="list">
             <div class="wrap-popup">
             <div class="circle mercury"></div>
-            <li class="listItem"><a href="./index.html">MERCURY</a></li>
+            <li class="listItem"><a class="a" href="#">MERCURY</a></li>
             </div>
             <hr class="popup-hr">
 
             <div class="wrap-popup">
             <div class="circle venus"></div>
-            <li class="listItem"><a href="">VENUS</a></li>
+            <li class="listItem"><a class="a" href="#">VENUS</a></li>
         </div>
         <hr class="popup-hr">
 
             <div class="wrap-popup">
             <div class="circle earth"></div>
-            <li class="listItem"><a href="">EARTH</a></li>
+            <li class="listItem"><a class="a" href="#">EARTH</a></li>
         </div>
         <hr class="popup-hr">
 
             <div class="wrap-popup">
             <div class="circle mars"></div>
-            <li class="listItem"><a href="">MARS</a></li>
+            <li class="listItem"><a  class="a" href="#">MARS</a></li>
         </div>
         <hr class="popup-hr">
 
         <div class="wrap-popup">
             <div class="circle jupiter"></div>
-            <li class="listItem"><a href="">JUPITER</a></li>
+            <li class="listItem"><a class="a" href="#">JUPITER</a></li>
         </div>
         <hr class="popup-hr">
 
         <div class="wrap-popup">
             <div class="circle saturn"></div>
-            <li class="listItem"><a href="">SARUTN</a></li>
+            <li class="listItem"><a class="a" href="#">SARUTN</a></li>
         </div>
         <hr class="popup-hr">
 
         <div class="wrap-popup">
             <div class="circle uranus"></div>
-            <li class="listItem"><a href="">URANUS</a></li>
+            <li class="listItem"><a class="a" href="#">URANUS</a></li>
         </div>
         <hr class="popup-hr">
 
         <div class="wrap-popup">
             <div class="circle neptune"></div>
-            <li class="listItem"><a href="">NEPTUNE</a></li>
+            <li class="listItem"><a  class="a" href="#">NEPTUNE</a></li>
         </ul>
     </div>
     </div>
@@ -92,17 +118,17 @@
         <hr class="mainHr">
     <div class="introduction">
         
-        <div class="wrap">
-            <a href="#" class="overview" id="overview">OVERVIEW</a>
-        <div class="quarter"></div>
+        <div class="wrap"  id="overViewId">
+            <a href="#" class="wrapA ">OVERVIEW</a>
+        <div class="quarter " id="overviewDiv"></div>
         </div>
-        <div class="wrap">
-        <a href="#" class="structure">STRUCTURE</a>
-        <div class="quarter structureDiv"></div>
+        <div class="wrap " id="structureId">
+        <a href="#" class="wrapA ">STRUCTURE</a>
+        <div class="quarter " id="structureDiv"></div>
     </div>
     <div class="wrap">
-        <a href="#" class="surface">SURFACE</a>
-        <div class="quarter surfaceDiv"></div>
+        <a href="#" class="wrapA " id="surfaceId">SURFACE</a>
+        <div class="quarter " id="surfaceDiv"></div>
     </div>
    
 </div>
@@ -110,6 +136,7 @@
 <div class="bigContainer">
     <div class="planetInfo">
         <img src="./assets/images/planet-mercury.svg" alt="planet image" class="planetImg" id="planet-img">
+        <img src="./assets/images/geology-mercury.png" alt="overlay" class="overlay">
         
         <div class="textOptions">
             <div class="textWrap">
@@ -117,19 +144,19 @@
         <p class="description">Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.</p>
         <div class="sourceDiv"><p class="source">Source :</p><a href="wikipedia.ge" class="sourceWiki">Wikipedia</a></div>
     </div>
-        <div class="optionsWrap">
-            <div class="option overview active" id="overview">
+        <div class="optionsWrap " >
+            <a href="#" class="option active" id="overviewBtn">
                 <p class="number">01</p>
                 <h5>OVERVIEW</h5>
-            </div>
-            <div class="option internalStructure" id="internal">
+            </a>
+            <a href="#" class="option" id="internalBtn" >
                 <p class="number">02</p>
                 <h5>INTERNAL STRUCTURE</h5>
-            </div>
-            <div class="option surfaceeGeology" id="geology">
+            </a>
+            <a  href="#" class="option" id="geologyBtn">
                 <p class="number">03</p>
                 <h5>SURFACE GEOLOGY</h5>
-            </div>
+            </a>
         </div>
 
     </div>
@@ -138,20 +165,20 @@
     </div>
     <div class="details" id="planetDesk">
         <div class="container rotationTm">
-            <div class="key">ROTATION TIME</div>
-            <div class="value">58.6 Days</div>
+            <div class="key ">ROTATION TIME</div>
+            <div class="value ROTATION">58.6 Days</div>
         </div>
         <div class="container revolutionTm">
-            <div class="key">REVOLUTION TIME</div>
-            <div class="value">87.97 Days</div>
+            <div class="key ">REVOLUTION TIME</div>
+            <div class="value revolutionTime">87.97 Days</div>
         </div>
         <div class="container radius">
             <div class="key">RADIUS</div>
-            <div class="value">2,439.7 KM</div>
+            <div class="value radiusLength">2,439.7 KM</div>
         </div>
         <div class="container avarageTemp">
-            <div class="key">AVERAGE TEMP.</div>
-            <div class="value">430°c</div>
+            <div class="key ">AVERAGE TEMP.</div>
+            <div class="value TEMP">430°c</div>
         </div>
     </div>
     </div>
