@@ -15,7 +15,17 @@ body {
     font-family: Antonio;
 
 }
-
+.overlay {
+    display: none ; /* Use !important if necessary */
+  }
+  .show-overlay{
+    position: absolute;
+    display: block !important;
+    top: 480px;
+    left: 380px;
+    width: 165px;
+    height: 200px;
+}
 a {
     text-decoration: none;
 }
@@ -365,6 +375,7 @@ H1 {
     margin: 95px;
     width: 111px;
     height: 111px;
+    position: relative;
 }
 
 .details {
@@ -555,7 +566,7 @@ H1 {
         line-height: 25px;
     }
 
-    .optionsWrap a:hover {
+    .optionsWrap a:hover  {
         background-color: #555;
         cursor: pointer;
     }
@@ -721,6 +732,7 @@ padding: 0 41px 0 32px;
     margin-bottom: 39px;
  
     }
+    
     .listItem{
         display: flex;
       justify-content: space-between;
