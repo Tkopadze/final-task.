@@ -47,7 +47,14 @@ ul {
     background-color: #070724;
     overflow-y: scroll;
 }
-
+.show-overlay {
+    position: absolute;
+    display: block !important;
+    top: 49%;
+    left: 35%;
+    width: 103px;
+    height: 126px;
+}
 .wrap-popup {
     display: flex;
     flex-direction: row;
@@ -412,7 +419,14 @@ H1 {
         height: 270px;
 
     }
-
+    .show-overlay {
+        position: absolute;
+        display: block !important;
+        top: 65%;
+        left: 39%;
+        width: 165px;
+        height: 200px;
+    }
     .popup-menu,
     .popup-menu-container,
     .popup-menu-content,
@@ -733,6 +747,14 @@ padding: 0 41px 0 32px;
  
     }
     
+    .show-overlay {
+        position: absolute;
+        display: block !important;
+        top: 480px;
+        left: 380px;
+        width: 165px;
+        height: 200px;
+    }
     .listItem{
         display: flex;
       justify-content: space-between;
