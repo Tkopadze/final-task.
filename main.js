@@ -4,7 +4,8 @@ const wrap = document.querySelectorAll(".wrapA");
 const quarter = document.querySelectorAll(".quarter");
 const listItem = document.querySelectorAll(".a");
 const rectangle = document.querySelectorAll(".rectangle");
-
+const burgerMenu = document.querySelector(".popup-menu");
+const options = document.querySelectorAll(".option");
 let planet = {
   name: "Mercury",
   overview: {
@@ -38,17 +39,21 @@ let planet = {
 };
 
 function toggleBurgerMenu() {
-  console.log("function");
-  const burgerMenu = document.querySelector(".popup-menu");
+  
   if (burgerMenu.style.display == "block") {
     burgerMenu.style.display = "none"; // Hide the burger menu
     burgerIcon.style.opacity = "1";
     fixedBody[0].style.overflowY = "scroll";
+
   } else {
     burgerMenu.style.display = "block"; // Show the burger menu
     fixedBody[0].style.overflowY = "hidden";
     burgerIcon.style.opacity = "0.5";
   }
+  
+
+   
+  
 }
 
 // Event listener for the burger icon
@@ -74,8 +79,6 @@ function lightUp() {
         const quarters = document.querySelectorAll(".quarter");
         quarters.forEach((q) => (q.style.backgroundColor = "unset"));
   
-        // Set the background color of the clicked quarter
-        const color = event.target.getAttribute("data-color");
         event.target.nextElementSibling.style.backgroundColor = planet.color;
       }
     });
@@ -94,18 +97,36 @@ function lightUp() {
             planet = data;
             changePlanet(planet);
 
+         
+
+
             const rectangles = document.querySelectorAll(".rectangle");
             rectangles.forEach((p) => (p.style.backgroundColor = "unset"));
             event.target.parentNode.previousElementSibling.style.backgroundColor =
               planet.color;
               changingOptions();
-
+              
+              // additional();
           })
           .catch((error) => {
             console.log("Error fetching data:", error);
           });
       }
+
+      options.forEach(y=>{
+            
+        y.style.background ='none';
+      });
+
+      if (burgerMenu.style.display=='block') {
+
+        burgerMenu.style.display = "none";
+      }
+
+
     });
+  
+
   });
 }
 
@@ -138,12 +159,26 @@ function changingOptions() {
     const internalBtn = document.querySelector("#internalBtn");
     const geologyBtn = document.querySelector("#geologyBtn");
     const overViewSource = document.querySelector('.sourceWiki');
+    const overviewbutton2 = document.querySelector('#overViewId');
+    const internalbutton2 = document.querySelector('#structureId');
+    const surfaceButton2  = document.querySelector('#surfaceId');
      active.style.backgroundColor=planet.color;
+    
     overlay.src = planet.images.geology;
     // overlay.style.display = "none";
     image.src = planet.images.planet;
     active.style.backgroundColor = planet.color;
 
+    overviewbutton2.addEventListener("click", () => {
+      image.src = planet.images.planet;
+      Text.innerText = planet.overview.content;
+      overViewSource.href = planet.overview.source;
+      if(overlay.classList.contains('show-overlay')){
+        overlay.classList.remove('show-overlay');
+      }
+    });
+    
+    
     overviewBtn.addEventListener("click", () => {
       image.src = planet.images.planet;
       Text.innerText = planet.overview.content;
@@ -153,7 +188,16 @@ function changingOptions() {
       }
     });
   
-    internalBtn.addEventListener("click", () => {
+    internalbutton2.addEventListener("click", () => {
+      image.src = planet.images.internal;
+      Text.innerText = planet.structure.content;
+      overViewSource.href = planet.structure.source;
+      // overlay.style.display = "none";
+      if(overlay.classList.contains('show-overlay')){
+        overlay.classList.remove('show-overlay');
+      }
+    });
+     internalBtn.addEventListener("click", () => {
       image.src = planet.images.internal;
       Text.innerText = planet.structure.content;
       overViewSource.href = planet.structure.source;
@@ -163,6 +207,15 @@ function changingOptions() {
       }
     });
 
+    surfaceButton2.addEventListener("click", () => {
+      image.src = planet.images.planet;
+      Text.innerText = planet.geology.content;
+      overViewSource.href = planet.geology.source;
+      overlay.src = planet.images.geology;
+      // overlay.style.display = "block";
+      overlay.classList.add('show-overlay');
+    });
+  
     geologyBtn.addEventListener("click", () => {
       image.src = planet.images.planet;
       Text.innerText = planet.geology.content;
@@ -172,12 +225,26 @@ function changingOptions() {
       overlay.classList.add('show-overlay');
     });
   }
+
+  // function additional(){
+  //   listItem.forEach((x)=>{
+  //     x.addEventListener('click',(event)=>{
+          
+  //     })
+        
+        
+  //   })
+  // }
+    
+    
+   
+     
   
 
 function lightUp2() {
   const h5 = document.querySelectorAll("h5");
   const number = document.querySelectorAll(".number");
-  const options = document.querySelectorAll(".option");
+
   options.forEach((x) => {
     x.addEventListener("click", (event) => {
       if (event.target) {
